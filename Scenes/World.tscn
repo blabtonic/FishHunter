@@ -141,7 +141,6 @@ format = 1
 tile_data = PoolIntArray( 327680, 1, 0, 327681, 0, 0, 327682, 1, 0, 327683, 2, 0, 327684, 6, 0, 327685, 2, 0, 327686, 4, 0, 327687, 1, 0, 327688, 1, 0, 327689, 0, 0 )
 
 [node name="ScoreLabel" parent="." instance=ExtResource( 4 )]
-margin_left = 75.0
-margin_top = -3.0
-margin_right = 115.0
-margin_bottom = 11.0
+margin_left = 144.0
+margin_right = 156.0
+margin_bottom = 13.0
