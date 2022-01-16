@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 48, 80, 0, 0, 0, 0, 48, 88, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 80 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 64, 80, 0, 0, 0, 0, 64, 88, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 80 )
 }
 
 [sub_resource type="TileSet" id=1]
@@ -123,14 +123,12 @@ curve = SubResource( 2 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( 0, 80 )
-rotation = -3.89541e-06
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 position = Vector2( 80, 45 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
@@ -139,7 +137,7 @@ texture = ExtResource( 3 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 327680, 1, 0, 327681, 0, 0, 327682, 1, 0, 327683, 2, 0, 327684, 6, 0, 327685, 2, 0, 327686, 4, 0, 327687, 1, 0, 327688, 1, 0, 327689, 0, 0 )
+tile_data = PoolIntArray( 327680, 1, 0, 327681, 0, 0, 327682, 1, 0, 327683, 0, 0, 327684, 6, 0, 327685, 2, 0, 327686, 0, 0, 327687, 1, 0, 327688, 1, 0, 327689, 0, 0 )
 
 [node name="ScoreLabel" parent="." instance=ExtResource( 4 )]
 margin_left = 148.0
