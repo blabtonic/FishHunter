@@ -4,12 +4,12 @@
 [ext_resource path="res://Assets/Ice Tiles_16 x 16px.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Arctic_Mountain_Background.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Score.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/CountdownUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 96, 0, 0, 0, 0, 48, 96, 0, 0, 0, 0, 48, 80, 0, 0, 0, 0, 0, 80 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 48, 80, 0, 0, 0, 0, 48, 88, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 80 )
 }
 
 [sub_resource type="TileSet" id=1]
@@ -113,24 +113,24 @@ _data = {
 6/z_index = 0
 
 [node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 82, 73 )
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource( 2 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( 0, 96 )
-rotation = -1.94771e-06
-
-[node name="Fish" parent="MobPath/SpawnLocation" instance=ExtResource( 5 )]
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 82, 73 )
+position = Vector2( 0, 80 )
+rotation = -3.89541e-06
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 position = Vector2( 80, 45 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
@@ -146,7 +146,11 @@ margin_left = 148.0
 margin_right = 160.0
 margin_bottom = 13.0
 
-[node name="Control" parent="." instance=ExtResource( 6 )]
-margin_left = 69.0
-margin_right = 69.0
+[node name="UI" parent="." instance=ExtResource( 6 )]
+margin_left = 71.0
+margin_right = 71.0
 margin_bottom = 0.0
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
