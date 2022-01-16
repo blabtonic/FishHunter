@@ -1,6 +1,5 @@
 extends Control
 
-#export (int) var minutes = 0
 export (int) var seconds = 0
 var dsec: float = 0
 
