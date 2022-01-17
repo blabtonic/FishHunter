@@ -6,11 +6,7 @@
 [ext_resource path="res://Scenes/Score.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/CountdownUI.tscn" type="PackedScene" id=6]
-
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 64, 80, 0, 0, 0, 0, 64, 88, 0, 0, 0, 0, 0, 88, 0, 0, 0, 0, 0, 80 )
-}
+[ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Ice Tiles_16 x 16px.png 0"
@@ -118,18 +114,12 @@ script = ExtResource( 5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 73 )
 
-[node name="MobPath" type="Path2D" parent="."]
-curve = SubResource( 2 )
-
-[node name="SpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( 0, 80 )
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 80, 45 )
+position = Vector2( 80, 40 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
@@ -149,6 +139,5 @@ margin_left = 71.0
 margin_right = 71.0
 margin_bottom = 0.0
 
-[node name="MobTimer" type="Timer" parent="."]
-
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[node name="Fish" parent="." instance=ExtResource( 7 )]
+position = Vector2( 40, 40 )

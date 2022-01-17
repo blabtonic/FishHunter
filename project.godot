@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="GravityFishing"
+run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -38,8 +39,9 @@ shoot={
 
 [layer_names]
 
-2d_render/layer_1="Player"
-2d_render/layer_2="World"
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="world"
 
 [physics]
 

@@ -1,14 +1,12 @@
-extends KinematicBody2D
+extends Area2D
+ 
+onready var _animated_sprite = $AnimatedSprite
+onready var death_animation = $AnimationPlayer
 
-export var min_speed: float = 100.0
-export var max_speed: float = 200.0
-
-func _ready() -> void:
-	#randomize()
-	$AnimatedSprite.playing = true
-	var mob_types = $AnimatedSprite.frames.get_animation_names()
-	$AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+func _process(_delta: float) -> void:
+	_animated_sprite.play("green")
 
 
-func _on_VisibilityNotifier2D_screen_exited() -> void:
-	queue_free()
+func _on_Fish_body_entered(_body: Node) -> void:
+	print("collision detected")
+	death_animation.play("fade_out")

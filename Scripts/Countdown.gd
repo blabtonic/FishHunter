@@ -3,7 +3,7 @@ extends Control
 export (int) var seconds: float = 0.0
 var dsec: float = 0.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if seconds > 0 and dsec <= 0:
 		seconds -= 1
 		dsec = 10
