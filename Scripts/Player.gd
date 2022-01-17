@@ -11,11 +11,10 @@ func shoot() -> void:
 	var spear = projectile.instance()
 	add_child_below_node(get_tree().get_root().get_node("."), spear)
 
-func _process(delta: float) -> void:
-	var axisX = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+func _process(_delta: float) -> void:
 	walkVelocity = Vector2()
 	
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot",true):
 		shoot()
 	# Movement
 	if Input.is_action_pressed("attack_activate"):
