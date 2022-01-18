@@ -29,7 +29,6 @@ func _ready() -> void:
 		"day": day,
 		"hour": hour,
 		"minute": minute,
-		"second": 0
 	}
 	
 	initialize_countdown()
@@ -91,24 +90,20 @@ func update_countdown_label_text() -> void:
 	var str_days
 	var str_hours
 	var str_minutes
-	var str_seconds
 	
 	if show_time_units:
 		str_days    = str(time_left.days) + "d "    if time_left.days    > 0 else ""
 		str_hours   = str(time_left.hours) + "h "   if time_left.hours   > 0 else ""
 		str_minutes = str(time_left.minutes) + "m " if time_left.minutes > 0 else ""
-		str_seconds = str(time_left.seconds) + "s"  if time_left.seconds > 0 else ""
 	else:
 		str_days    = "%02d" % time_left.days    +":"
 		str_hours   = "%02d" % time_left.hours   +":"
 		str_minutes = "%02d" % time_left.minutes +":"
-		str_seconds = "%02d" % time_left.seconds
 		
-	countdown_label.text = str_days + str_hours + str_minutes + str_seconds
+	countdown_label.text = str_days + str_hours + str_minutes
 
 
 func get_datetime_from_unix(unix) -> Dictionary:
-	var seconds = floor(unix%60)
 	var minutes = floor((unix/60)%60)
 	var hours   = floor((unix/3600)%24)
 	var days    = floor(unix/86400)
@@ -116,7 +111,6 @@ func get_datetime_from_unix(unix) -> Dictionary:
 	var time = {
 		"days": days,
 		"hours": hours,
-		"minutes": minutes,
-		"seconds": seconds
+		"minutes": minutes
 	}
 	return time
