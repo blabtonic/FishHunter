@@ -83,7 +83,6 @@ tracks/1/keys = {
 }
 
 [node name="Fish" type="Area2D"]
-modulate = Color( 1, 1, 1, 0 )
 collision_layer = 2
 script = ExtResource( 2 )
 

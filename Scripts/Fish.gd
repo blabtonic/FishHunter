@@ -8,5 +8,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_Fish_body_entered(_body: Node) -> void:
-	print("collision detected")
+	$HitSound.play()
 	death_animation.play("fade_out")
