@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Ice Tiles_16 x 16px.png" type="Texture" id=2]
@@ -6,7 +6,14 @@
 [ext_resource path="res://Scenes/Score.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/CountdownUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/FishFollow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/PathSpawner.gd" type="Script" id=9]
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8, 88, 0, 0, 0, 0, 8, 32, 0, 0, 0, 0, 16, 88, 0, 0, 0, 0, 24, 32, 0, 0, 0, 0, 32, 88, 0, 0, 0, 0, 40, 32, 0, 0, 0, 0, 40, 88, 0, 0, 0, 0, 48, 32, 0, 0, 0, 0, 48, 88 )
+}
 
 [sub_resource type="TileSet" id=1]
 0/name = "Ice Tiles_16 x 16px.png 0"
@@ -114,6 +121,12 @@ script = ExtResource( 5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 82, 73 )
 
+[node name="FishPath" type="Path2D" parent="."]
+curve = SubResource( 2 )
+script = ExtResource( 9 )
+
+[node name="FishFollow" parent="FishPath" instance=ExtResource( 7 )]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -124,6 +137,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -139,5 +153,5 @@ margin_left = 71.0
 margin_right = 71.0
 margin_bottom = 0.0
 
-[node name="Fish" parent="." instance=ExtResource( 7 )]
-position = Vector2( 40, 40 )
+[node name="Fish" parent="." instance=ExtResource( 8 )]
+position = Vector2( 128, 48 )
