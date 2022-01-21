@@ -3,7 +3,7 @@ extends KinematicBody2D
 var walkVelocity: = Vector2()
  
 onready var _animated_sprite = $AnimatedSprite
-var score = 0
+onready var score: = 0
 
 func shoot() -> void:
 	var projectile = load("res://Scenes/Projectile.tscn")
@@ -13,7 +13,7 @@ func shoot() -> void:
 func _process(_delta: float) -> void:
 	walkVelocity = Vector2()
 	
-	var PlayerScoreNode = get_parent().get_node("res://Scenes/Score.tscn")
+	#var PlayerScoreNode = get_parent().get_node("res://Scenes/Score.tscn")
 	#PlayerScoreNode.text = str(score)
 	
 	if Input.is_action_just_pressed("shoot",true) and Input.is_action_pressed("attack_activate"):
