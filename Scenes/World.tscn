@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Ice Tiles_16 x 16px.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Scripts/World.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/CountdownUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/FishFollow.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Fish.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/PathSpawner.gd" type="Script" id=9]
 
 [sub_resource type="Curve2D" id=2]
@@ -151,6 +150,3 @@ margin_bottom = 13.0
 margin_left = 71.0
 margin_right = 71.0
 margin_bottom = 0.0
-
-[node name="Fish" parent="." instance=ExtResource( 8 )]
-position = Vector2( 128, 48 )
