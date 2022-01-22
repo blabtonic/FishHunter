@@ -26,8 +26,8 @@ func _on_Options_pressed()->void:
 func _on_Exit_pressed()->void:
 	Game.emit_signal("Exit")
 
-#Localization
+#Localization Changes text on buttons
 func retranslate()->void:
-	find_node("NewGame").text = tr("NEW_GAME")
+	find_node("NewGame").text = tr("Start")
 	find_node("Options").text = tr("OPTIONS")
 	find_node("Exit").text = tr("EXIT")

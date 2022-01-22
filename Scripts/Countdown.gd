@@ -16,3 +16,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_Timer_timeout() -> void:
 	dsec -=1
+	if seconds == 0:
+		$Winner.show()
+	else:
+		$Winner.hide()

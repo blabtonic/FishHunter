@@ -10,7 +10,7 @@ bg_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
 [node name="MainMenu" type="CanvasLayer"]
 layer = 0
 script = ExtResource( 3 )
-First_Level = "res://Levels/TestScene.tscn"
+First_Level = "res://Scenes/World.tscn"
 
 [node name="BG" type="Panel" parent="."]
 pause_mode = 2
@@ -36,7 +36,7 @@ __meta__ = {
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 144.0
-margin_bottom = 98.0
+margin_bottom = 78.0
 size_flags_vertical = 3
 
 [node name="CenterLogo" type="CenterContainer" parent="BG/MarginContainer/VBoxMain"]
@@ -52,36 +52,37 @@ texture = ExtResource( 2 )
 [node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxMain"]
 margin_top = 23.0
 margin_right = 128.0
-margin_bottom = 82.0
+margin_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ButtonContainer" type="VBoxContainer" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
-margin_right = 51.0
-margin_bottom = 59.0
+margin_right = 35.0
+margin_bottom = 39.0
 size_flags_vertical = 3
 custom_constants/separation = 1
 
 [node name="NewGame" parent="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer" groups=["MainMenu"] instance=ExtResource( 1 )]
-margin_right = 51.0
-text = "New Game"
+margin_right = 35.0
+text = "Start"
 
 [node name="Options" parent="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer" instance=ExtResource( 1 )]
+visible = false
 margin_top = 20.0
-margin_right = 51.0
+margin_right = 45.0
 margin_bottom = 39.0
 text = "Options"
 
 [node name="Exit" parent="BG/MarginContainer/VBoxMain/HBoxContainer/ButtonContainer" instance=ExtResource( 1 )]
-margin_top = 40.0
-margin_right = 51.0
-margin_bottom = 59.0
+margin_top = 20.0
+margin_right = 35.0
+margin_bottom = 39.0
 text = "Exit"
 
 [node name="RightMargin" type="Control" parent="BG/MarginContainer/VBoxMain/HBoxContainer"]
-margin_left = 55.0
+margin_left = 39.0
 margin_right = 128.0
-margin_bottom = 59.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
