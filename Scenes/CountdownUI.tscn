@@ -23,7 +23,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-seconds = 5
+seconds = 60
 
 [node name="sec" type="RichTextLabel" parent="Countdown"]
 margin_right = 20.0

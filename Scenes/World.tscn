@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Ice Tiles_16 x 16px.png" type="Texture" id=2]
@@ -11,7 +11,22 @@
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 8, 88, 0, 0, 0, 0, 8, 32, 0, 0, 0, 0, 16, 88, 0, 0, 0, 0, 24, 32, 0, 0, 0, 0, 32, 88, 0, 0, 0, 0, 40, 32, 0, 0, 0, 0, 40, 88, 0, 0, 0, 0, 48, 32, 0, 0, 0, 0, 48, 88 )
+"points": PoolVector2Array( 0, 0, 0, 0, 8, 88, 0, 0, 0, 0, 8, 32, 0, 0, 0, 0, 8, 8, 0, 0, 0, 0, 16, 32, 0, 0, 0, 0, 16, 88 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 120, 88, 0, 0, 0, 0, 120, 32, 0, 0, 0, 0, 120.891, 41.3355, 0, 0, 0, 0, 124.78, 61.3113, 0, 0, 0, 0, 128, 88 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 136, 88, 0, 0, 0, 0, 136, 8, 0, 0, 0, 0, 144, 88 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 24, 88, 0, 0, 0, 0, 24, 56, 0, 0, 0, 0, 32, 88 )
 }
 
 [sub_resource type="TileSet" id=1]
@@ -125,6 +140,25 @@ curve = SubResource( 2 )
 script = ExtResource( 9 )
 
 [node name="FishFollow" parent="FishPath" instance=ExtResource( 7 )]
+
+[node name="FishPath2" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[node name="FishFollow" parent="FishPath2" instance=ExtResource( 7 )]
+position = Vector2( 120, 88 )
+
+[node name="FishPath3" type="Path2D" parent="."]
+position = Vector2( 0, 1 )
+curve = SubResource( 4 )
+
+[node name="FishFollow" parent="FishPath3" instance=ExtResource( 7 )]
+position = Vector2( 136, 88 )
+
+[node name="FishPath4" type="Path2D" parent="."]
+curve = SubResource( 5 )
+
+[node name="FishFollow" parent="FishPath4" instance=ExtResource( 7 )]
+position = Vector2( 24, 88 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
